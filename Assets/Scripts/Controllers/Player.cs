@@ -39,6 +39,10 @@ public class Player : MonoBehaviour
             moveDirection += Vector3.right;
         if (Input.GetKey(KeyCode.A))
             moveDirection += Vector3.left;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            spawnbomb();
+        }
 
         if (moveDirection.sqrMagnitude > 0)
         {
@@ -62,6 +66,15 @@ public class Player : MonoBehaviour
         }
 
         transform.position += currentVelocity * Time.deltaTime;
+    }
+
+    void spawnbomb()
+    {
+       GameObject spawnbomb =  Instantiate(bombPrefab);
+        spawnbomb.transform.position = transform.position;
+        spawnbomb.transform.position = 
+            new Vector3(spawnbomb.transform.position.x, spawnbomb.transform.position.y -1, spawnbomb.transform.position.z);
+        spawnbomb.GetComponent<Bombs>().EnemyTransform = enemyTransform;
     }
 
 }
