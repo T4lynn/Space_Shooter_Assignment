@@ -25,7 +25,7 @@ public class Bombs : MonoBehaviour
     {
         Vector3 EnemyDirection = EnemyTransform.position - BombTransform.position;
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("enemy position" + EnemyTransform.position);
+        //Debug.Log("enemy position" + EnemyTransform.position);
         BombRigid.AddForce(EnemyDirection * Thurst);
     }
 

@@ -27,14 +27,14 @@ public class Enemy : MonoBehaviour
     IEnumerator EnemyWarp()
     {
         Coroutinerunning = true;
-        Debug.Log("Coroutine started");
+       // Debug.Log("Coroutine started");
         float NewPositionX;
         float NewPositionY;
         NewPositionX = Random.Range(-10, 10);
         NewPositionY = Random.Range(-10, 10);
         Vector3 NewVectorPosition = new Vector3(NewPositionX, NewPositionY, 0);
         yield return new WaitForSeconds(1);
-        Debug.Log("New Position" + NewVectorPosition);
+      //  Debug.Log("New Position" + NewVectorPosition);
         transform.position = NewVectorPosition;
         yield return new WaitForSeconds(2);
         NewPositionX = Random.Range(-10, 10);
